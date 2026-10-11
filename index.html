@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <!-- Style block allows the images to flow horizontally and then stack vertically on mobile -->
-<style>
+  <style>
   .image-gallery {
     display: flex;
     gap: 20px; /* Space between the images */
     justify-content: center;
     flex-wrap: wrap; /* Allows images to stack on mobile */
-    align-items: flex-start; /* Aligns the tops of the images nicely */
   }
   
   .image-gallery figure {
@@ -19,29 +18,12 @@
     text-align: center;
   }
   
-  /* The first 3 images keep their original, perfect look */
   .image-gallery img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
-  }
-
-  /* SPECIAL WRAPPER: Only used for the 4th image to match the height */
-  .image-gallery .crop-box {
-    width: 300px;
-    height: 225px; /* Adjust this number up or down if you want it slightly taller/shorter to match */
-    overflow: hidden;
-    border-radius: 8px;
-  }
-
-  /* Makes the 4th image fill the crop box */
-  .image-gallery .crop-box img {
-    height: 100%;
-    object-fit: cover;
+    border-radius: 8px; /* Optional: adds clean rounded corners */
   }
 </style>
-
-    
     <title>Lily's Portfolio</title>
   </head>
 
@@ -56,34 +38,22 @@
   
   <div class="image-gallery">
     <figure>
-      <!-- --- NEW: Added the img-container wrapper div --- -->
-      <div class="img-container">
-        <img src="images/IMG_7852.jpeg" alt="Electronics and frame">
-      </div>
+      <img src="images/IMG_7852.jpeg" alt="Electronics and frame">
       <figcaption>Getting the elctronics fit to the 3D printed frame.</figcaption>
     </figure>
     
     <figure>
-      <!-- --- NEW: Added the img-container wrapper div --- -->
-      <div class="img-container">
-        <img src="images/IMG_7594.jpeg" alt="Soldering components">
-      </div>
+      <img src="images/IMG_7594.jpeg" alt="Soldering components">
       <figcaption>Soldering components.</figcaption>
     </figure>
 
     <figure>
-      <!-- --- NEW: Added the img-container wrapper div --- -->
-      <div class="img-container">
-        <img src="images/IMG_7731.jpeg" alt="Testing at home">
-      </div>
+      <img src="images/IMG_7731.jpeg" alt="Testing at home">
       <figcaption>Brought it home to calibrate the gyroscope.</figcaption>
     </figure>
 
     <figure>
-      <!-- --- NEW: Added the img-container wrapper div --- -->
-      <div class="img-container">
-        <img src="images/IMG_7757.JPG" alt="Me, Jet, Brayden">
-      </div>
+      <img src="images/IMG_7757.JPG" alt="Me, Jet, Brayden">
       <figcaption>Celebrating getting the camera connected!</figcaption>
     </figure>
   </div>
