@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <!-- Style block allows the images to flow horizontally and then stack vertically on mobile -->
-  <style>
+ <style>
   .image-gallery {
     display: flex;
     gap: 20px; /* Space between the images */
     justify-content: center;
     flex-wrap: wrap; /* Allows images to stack on mobile */
+    align-items: flex-start; /* Aligns them nicely at the top */
   }
   
   .image-gallery figure {
@@ -17,21 +18,13 @@
     margin: 0;
     text-align: center;
   }
-
-  /* --- NEW: This container locks the photo dimensions and crops excess --- */
-  .image-gallery .img-container {
-    width: 300px;
-    height: 200px; /* Adjust this height if you want them taller/shorter */
-    overflow: hidden;
-    border-radius: 8px;
-  }
   
   .image-gallery img {
     width: 100%;
-    /* height: auto; -- REMOVED: replaced with height: 100% below */
-    height: 100%; /* --- NEW: forces image to fill the container height --- */
-    object-fit: cover; /* --- NEW: automatically crops the vertical photo to fit --- */
-    /* border-radius: 8px; -- MOVED up to the .img-container so it crops nicely */
+    height: auto; /* Lets images keep their natural proportions */
+    max-height: 250px; /* Caps the height so the vertical photo isn't too huge */
+    object-fit: contain; /* Ensures the whole image is visible without cropping */
+    border-radius: 8px; /* Clean rounded corners */
   }
 </style>
     <title>Lily's Portfolio</title>
