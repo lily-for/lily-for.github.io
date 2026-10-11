@@ -23,6 +23,19 @@
     height: auto;
     border-radius: 8px; /* Optional: adds clean rounded corners */
   }
+
+    /* TARGET ONLY THE 4TH FIGURE: Give it a fixed height matching your landscape photos */
+  .image-gallery figure:nth-child(4) {
+    height: 225px; /* If it's slightly too tall or short compared to the others, tweak this number */
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  /* Crops only the 4th image to fit that height box */
+  .image-gallery figure:nth-child(4) img {
+    height: 100%;
+    object-fit: cover;
+  }
 </style>
     <title>Lily's Portfolio</title>
   </head>
