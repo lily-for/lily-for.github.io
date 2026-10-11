@@ -3,18 +3,50 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <!-- Style block allows the images to flow horizontally and then stack vertically on mobile -->
+  <style>
+  .image-gallery {
+    display: flex;
+    gap: 20px; /* Space between the images */
+    justify-content: center;
+    flex-wrap: wrap; /* Allows images to stack on mobile */
+  }
+  
+  .image-gallery figure {
+    width: 300px; /* Control image container width */
+    margin: 0;
+    text-align: center;
+  }
+  
+  .image-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: adds clean rounded corners */
+  }
+</style>
     <title>Lily's Portfolio</title>
   </head>
 
   <body>
     <h1>Hi, I'm Lily</h1>
     <p>Welcome to my portfolio. I am building this website as I learn.</p>
-
-  <!-- first drone picture with caption -->  
-  <figure>
-    <img src="images/IMG_7852.jpeg" alt="Drone pic" style="width: 400px; height: auto;">>
-    <figcaption>Fitting the motors and other electrical components to the 3D-printed base.</figcaption>
-  </figure>
+  <!-- Drone -->  
+  <section>
+  <h2>Quadcopter Project</h2>
+  <p>Designed and built a drone with ASME to compete in St. Louis.</p>
+  
+  <div class="image-gallery">
+    <figure>
+      <img src="images/IMG_7852.jpeg" alt="Drone front view">
+      <figcaption>description here</figcaption>
+    </figure>
+    
+    <figure>
+      <img src="images/IMG_7853.jpeg" alt="Drone top view">
+      <figcaption>description here</figcaption>
+    </figure>
+  </div>
+</section>
     
   </body>
 </html>
