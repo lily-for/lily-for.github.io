@@ -17,11 +17,21 @@
     margin: 0;
     text-align: center;
   }
+
+  /* --- NEW: This container locks the photo dimensions and crops excess --- */
+  .image-gallery .img-container {
+    width: 300px;
+    height: 200px; /* Adjust this height if you want them taller/shorter */
+    overflow: hidden;
+    border-radius: 8px;
+  }
   
   .image-gallery img {
     width: 100%;
-    height: auto;
-    border-radius: 8px; /* Optional: adds clean rounded corners */
+    /* height: auto; -- REMOVED: replaced with height: 100% below */
+    height: 100%; /* --- NEW: forces image to fill the container height --- */
+    object-fit: cover; /* --- NEW: automatically crops the vertical photo to fit --- */
+    /* border-radius: 8px; -- MOVED up to the .img-container so it crops nicely */
   }
 </style>
     <title>Lily's Portfolio</title>
@@ -38,22 +48,34 @@
   
   <div class="image-gallery">
     <figure>
-      <img src="images/IMG_7852.jpeg" alt="Electronics and frame">
+      <!-- --- NEW: Added the img-container wrapper div --- -->
+      <div class="img-container">
+        <img src="images/IMG_7852.jpeg" alt="Electronics and frame">
+      </div>
       <figcaption>Getting the elctronics fit to the 3D printed frame.</figcaption>
     </figure>
     
     <figure>
-      <img src="images/IMG_7594.jpeg" alt="Soldering components">
+      <!-- --- NEW: Added the img-container wrapper div --- -->
+      <div class="img-container">
+        <img src="images/IMG_7594.jpeg" alt="Soldering components">
+      </div>
       <figcaption>Soldering components.</figcaption>
     </figure>
 
     <figure>
-      <img src="images/IMG_7731.jpeg" alt="Testing at home">
+      <!-- --- NEW: Added the img-container wrapper div --- -->
+      <div class="img-container">
+        <img src="images/IMG_7731.jpeg" alt="Testing at home">
+      </div>
       <figcaption>Brought it home to calibrate the gyroscope.</figcaption>
     </figure>
 
     <figure>
-      <img src="images/IMG_7757.JPG" alt="Me, Jet, Brayden">
+      <!-- --- NEW: Added the img-container wrapper div --- -->
+      <div class="img-container">
+        <img src="images/IMG_7757.JPG" alt="Me, Jet, Brayden">
+      </div>
       <figcaption>Celebrating getting the camera connected!</figcaption>
     </figure>
   </div>
