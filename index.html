@@ -25,14 +25,14 @@
   }
 
     /* TARGET ONLY THE 4TH FIGURE: Give it a fixed height matching your landscape photos */
-  .image-gallery figure:nth-child(4) {
+  .image-gallery figure:nth-child(4) .img-crop{
     height: 400px; /* If it's slightly too tall or short compared to the others, tweak this number */
     overflow: hidden;
     border-radius: 8px;
   }
 
   /* Crops only the 4th image to fit that height box */
-  .image-gallery figure:nth-child(4) img {
+  .image-gallery figure:nth-child(4) .img-crop img {
     height: 100%;
     object-fit: cover;
   }
@@ -66,7 +66,9 @@
     </figure>
 
     <figure>
-      <img src="images/IMG_7757.JPG" alt="Me, Jet, Brayden">
+      <div class="img-crop">
+        <img src="images/IMG_7757.JPG" alt="Me, Jet, Brayden">
+      </div>
       <figcaption>Celebrating getting the camera connected!</figcaption>
     </figure>
   </div>
