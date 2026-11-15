@@ -1,78 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <!-- Style block allows the images to flow horizontally and then stack vertically on mobile -->
-  <style>
-  .image-gallery {
-    display: flex;
-    gap: 20px; /* Space between the images */
-    justify-content: center;
-    flex-wrap: wrap; /* Allows images to stack on mobile */
-  }
-  
-  .image-gallery figure {
-    width: 300px; /* Control image container width */
-    margin: 0;
-    text-align: center;
-  }
-  
-  .image-gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px; /* Optional: adds clean rounded corners */
-  }
-
-    /* TARGET ONLY THE 4TH FIGURE: Give it a fixed height matching your landscape photos */
-  .image-gallery figure:nth-child(4) .img-crop{
-    height: 400px; /* If it's slightly too tall or short compared to the others, tweak this number */
-    overflow: hidden;
-    border-radius: 8px;
-  }
-
-  /* Crops only the 4th image to fit that height box */
-  .image-gallery figure:nth-child(4) .img-crop img {
-    height: 100%;
-    object-fit: cover;
-  }
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#153e3b"><meta name="description" content="Lily Forseen — computer engineering and computer science student. Projects in embedded systems, electronics, robotics, and prototyping.">
+<title>Lily Forseen | Engineering Portfolio</title>
+<style>
+:root{--paper:#f3efe4;--ink:#203533;--teal:#153e3b;--plum:#57334e;--rust:#a64f31;--gold:#d8a146;--olive:#667443;--line:#c9c5b7;--muted:#626a63}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.6}a{color:inherit}.wrap{max-width:1170px;margin:auto;padding:0 34px}header{background:var(--teal);color:#f7f1e4;border-bottom:5px solid var(--gold)}.top{display:flex;justify-content:space-between;align-items:center;min-height:76px;gap:20px}.brand{text-decoration:none;font-weight:800;letter-spacing:-.045em;font-size:1.35rem}.nav{display:flex;gap:28px;font-size:.89rem}.nav a{text-decoration:none;opacity:.88}.nav a:hover{text-decoration:underline}.stripe{height:8px;background:linear-gradient(90deg,var(--rust) 0 24%,var(--gold) 24% 44%,var(--olive) 44% 70%,var(--plum) 70% 100%)}.hero{padding:88px 0 90px;display:grid;grid-template-columns:1.3fr .7fr;gap:68px;align-items:center}.eyebrow,.kicker{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800}.eyebrow{color:var(--rust)}h1,h2,h3{line-height:1.08;letter-spacing:-.045em}h1{font-family:Georgia,serif;font-weight:500;font-size:clamp(3.2rem,6.5vw,6rem);margin:16px 0 28px}h1 span{color:var(--rust)}.lead{font-size:1.14rem;max-width:660px;margin:0 0 29px}.pills{display:flex;flex-wrap:wrap;gap:9px}.pills span{border:1px solid #9ba599;font-size:.79rem;padding:5px 11px;border-radius:30px}.hero-aside{border:1px solid var(--line);padding:30px;background:#e9e4d7;transform:rotate(1.2deg);box-shadow:10px 11px 0 #d6cbb8}.hero-aside strong{font:500 2.1rem/1.15 Georgia,serif;display:block;margin:15px 0 25px}.aside-mark{font-family:Georgia,serif;color:var(--rust);font-size:5rem;line-height:1}.hero-aside small{color:#58625d}.section-head{display:flex;justify-content:space-between;gap:18px;align-items:end;border-top:1px solid var(--line);padding:20px 0 25px}.section-head h2{font-size:clamp(2rem,3.5vw,3rem);margin:5px 0}.index{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:76px}.index a{min-height:165px;display:flex;flex-direction:column;justify-content:space-between;padding:19px;text-decoration:none;color:#fff;transition:transform .18s,filter .18s}.index a:hover,.index a:focus-visible{transform:translateY(-5px);filter:brightness(1.1);color:#fff}.index small{font-size:.71rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700}.index strong{font-family:Georgia,serif;font-weight:500;font-size:1.65rem;line-height:1.03}.index span{align-self:end;font-size:1.4rem}.teal{background:var(--teal)}.rust{background:var(--rust)}.plum{background:var(--plum)}.olive{background:var(--olive)}.project{padding:57px 0 66px;border-top:1px solid var(--line)}.project-title{display:grid;grid-template-columns:180px 1fr;gap:30px;align-items:start}.num{display:inline-block;border-top:3px solid var(--rust);padding-top:7px;color:var(--muted);font-size:.75rem;font-weight:800;letter-spacing:.1em}.project h3{font:500 clamp(2.4rem,4.8vw,4.3rem)/1.04 Georgia,serif;margin:0 0 12px}.project .subtitle{font-size:1.07rem;color:var(--muted);margin:0 0 20px}.project-body{display:grid;grid-template-columns:1.05fr .95fr;gap:45px;margin:26px 0}.project-body p{margin:0 0 15px;max-width:670px}.points{margin:0;padding-left:20px}.points li{margin:9px 0}.facts{display:flex;gap:9px;flex-wrap:wrap;margin:25px 0}.facts span{border:1px solid var(--line);padding:5px 10px;font-size:.79rem}.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:22px}.photo{display:block;padding:0;border:0;background:transparent;cursor:zoom-in;text-align:left;color:inherit}.photo img{display:block;width:100%;height:225px;object-fit:cover;filter:saturate(.95)}.photo:hover img{filter:saturate(1.2)}.photo em{display:block;font-size:.78rem;font-style:normal;margin-top:9px;color:var(--muted)}.photo:focus-visible{outline:3px solid var(--gold);outline-offset:4px}.no-media{padding:36px;background:#e9e4d7;border-left:6px solid var(--olive);font-size:.9rem}.no-media strong{display:block;font:500 1.6rem Georgia,serif;margin-bottom:8px}.note{font-size:.8rem;color:var(--muted)}.about{background:var(--teal);color:#eee9da;padding:67px 0}.about-inner{display:grid;grid-template-columns:.75fr 1.25fr;gap:45px}.about h2{font:500 3rem Georgia,serif;margin:12px 0}.about p{max-width:650px}.about a{color:#f1c876}footer{padding:22px 0;font-size:.82rem;color:var(--muted);display:flex;justify-content:space-between;gap:20px}.viewer{position:fixed;inset:0;z-index:1000;background:rgba(11,17,17,.96);color:#fff;display:none;align-items:center;justify-content:center;flex-direction:column;padding:65px 70px 30px}.viewer.open{display:flex}.viewer img{max-width:100%;max-height:calc(100vh - 160px);object-fit:contain}.viewer .caption{font-size:.9rem;text-align:center;margin-top:13px}.viewer button{cursor:pointer;position:absolute;border:1px solid #8e9590;background:#233d3b;color:#fff;border-radius:100%;font-size:1.7rem;width:48px;height:48px;display:grid;place-items:center}.viewer .close{right:20px;top:18px}.viewer .prev{left:13px;top:50%}.viewer .next{right:13px;top:50%}.viewer .counter{position:absolute;left:23px;top:26px;font-size:.85rem}@media(max-width:850px){.hero{grid-template-columns:1fr;gap:35px;padding:58px 0}.hero-aside{transform:none}.index{grid-template-columns:repeat(2,1fr)}.project-title{grid-template-columns:1fr;gap:12px}.project-body{grid-template-columns:1fr;gap:12px}.gallery{grid-template-columns:repeat(2,1fr)}.about-inner{grid-template-columns:1fr;gap:8px}}@media(max-width:500px){.wrap{padding:0 19px}.nav{gap:13px}.nav a{font-size:.78rem}.index a{min-height:140px;padding:14px}.index strong{font-size:1.3rem}.gallery{gap:9px}.photo img{height:165px}.viewer{padding:66px 12px}.viewer .prev,.viewer .next{top:auto;bottom:40px}.hero{padding:42px 0}.project{padding:45px 0}footer{flex-direction:column;gap:0}}
 </style>
-    <title>Lily's Portfolio</title>
-  </head>
-
-  <body>
-    <h1>Hi, I'm Lily</h1>
-    <p>Welcome to my portfolio. I am building this website as I learn.</p>
-  <!-- Drone -->  
-  <section>
-  <h2 style="font-size: 28px; text-align: center; margin-top: 60px;">
-    Quadcopter Project</h2>
-  <p style="text-align: center">Designed and built a drone with ASME to compete in St. Louis.</p>
-  
-  <div class="image-gallery">
-    <figure>
-      <img src="images/IMG_7852.jpeg" alt="Electronics and frame">
-      <figcaption>Getting the elctronics fit to the 3D printed frame.</figcaption>
-    </figure>
-    
-    <figure>
-      <img src="images/IMG_7594.jpeg" alt="Soldering components">
-      <figcaption>Soldering components.</figcaption>
-    </figure>
-
-    <figure>
-      <img src="images/IMG_7731.jpeg" alt="Testing at home">
-      <figcaption>Brought it home to calibrate the gyroscope.</figcaption>
-    </figure>
-
-    <figure>
-      <div class="img-crop">
-        <img src="images/IMG_7757.JPG" alt="Me, Jet, Brayden">
-      </div>
-      <figcaption>Celebrating getting the camera connected!</figcaption>
-    </figure>
-  </div>
-</section>
-    
-  </body>
-</html>
+</head>
+<body>
+<header><div class="wrap top"><a class="brand" href="#top">Lily Forseen<span style="color:#dbb66c"> / </span>Engineering</a><nav class="nav"><a href="#projects">Projects</a><a href="#about">About</a><a href="mailto:lilyforseen@gmail.com">Contact</a></nav></div><div class="stripe"></div></header>
+<main id="top">
+<section class="wrap hero"><div><div class="eyebrow">Computer engineering + computer science</div><h1>Made to <span>work.</span><br>Made to learn.</h1><p class="lead">I'm Lily, a University of Iowa engineering student interested in the point where electronics, software, and physical systems meet. I like figuring out why something doesn't work—and getting it to.</p><div class="pills"><span>Embedded systems</span><span>Electronics</span><span>Robotics</span><span>Prototyping</span></div></div><aside class="hero-aside"><div class="aside-mark">✳</div><small>ENGINEERING NOTES / 2026</small><strong>Circuits. Code. Build. Test. Repeat.</strong><small>University of Iowa · B.S. expected May 2027</small></aside></section>
+<section class="wrap" id="projects"><div class="section-head"><div><div class="kicker">01—04 / Selected work</div><h2>Projects</h2></div><span class="note">Browse the builds below</span></div><div class="index"><a class="teal" href="#neurosense"><small>01 / Embedded systems</small><strong>NeuroSense</strong><span>↗</span></a><a class="rust" href="#drone"><small>02 / Flight + electronics</small><strong>FPV Drone</strong><span>↗</span></a><a class="plum" href="#telescope"><small>03 / Mechatronics</small><strong>Star Sniper</strong><span>↗</span></a><a class="olive" href="#truck"><small>04 / Robotics</small><strong>Autonomous Garbage Truck</strong><span>↗</span></a></div></section>
+<section class="wrap project" id="neurosense"><div class="project-title"><div class="num">PROJECT / 01</div><div><h3>NeuroSense</h3><p class="subtitle">Adaptive sensory feedback glove · ASME Make-a-Thon</p></div></div><div class="project-body"><div><p>A 48-hour team project exploring how temperature sensing can give wearable users clear alerts through light and sound. Our five-person team earned <b>3rd place at the 2026 ASME Make-a-Thon.</b></p><p>My work focused on translating skin injury research into meaningful temperature-alert thresholds, specifying LED and buzzer behaviors, and testing the Teensy-based thermistor response under hot and cold conditions.</p><div class="facts"><span>48-hour build</span><span>Teensy</span><span>Thermistors</span><span>LED + buzzer feedback</span></div></div><div class="no-media"><strong>Electronics first.</strong>This project is about the temperature-sensing and feedback circuit, not the 3D-printed hand used to display the glove. The reuploaded circuit photos will go here after they are transferred to the repository.</div></div></section>
+<section class="wrap project" id="drone"><div class="project-title"><div class="num">PROJECT / 02</div><div><h3>FPV Drone</h3><p class="subtitle">Flight controller integration · ASME IAM3D Competition</p></div></div><div class="project-body"><div><p>Built and integrated the electrical systems for an FPV drone, including flight-controller and electronic speed-controller connections, and helped troubleshoot the configuration in Betaflight.</p><p>Installed dual cameras and a video switcher for selectable pilot views, while working around space constraints inside a 3D-printed frame.</p><div class="facts"><span>Soldering</span><span>Flight controller + ESC</span><span>Betaflight</span><span>Dual cameras</span></div></div><div class="no-media" style="border-left-color:var(--rust)"><strong>Build documentation</strong>The four photos below are already stored in your repository. Click any photo to enlarge it and use the arrows to browse without closing the viewer.</div></div>
+<div class="gallery" data-gallery="drone">
+<button class="photo" type="button"><img src="images/IMG_7852.jpeg" alt="Drone electronics mounted on a quadcopter frame" loading="lazy"><em>Flight controller mounted on frame</em></button>
+<button class="photo" type="button"><img src="images/IMG_7594.jpeg" alt="Soldering and wiring the flight controller electronics" loading="lazy"><em>Electronics assembly and soldering</em></button>
+<button class="photo" type="button"><img src="images/IMG_7731.jpeg" alt="Betaflight setup and calibration on laptop" loading="lazy"><em>Flight software setup</em></button>
+<button class="photo" type="button"><img src="images/IMG_7757.JPG" alt="Drone project team photographed at work" loading="lazy"><em>A good day in the lab</em></button>
+</div></section>
+<section class="wrap project" id="telescope"><div class="project-title"><div class="num">PROJECT / 03</div><div><h3>Star Sniper</h3><p class="subtitle">Smart telescope · Internet of Things course</p></div></div><div class="project-body"><div><p>Developed the tripod and leveling subsystem for a smart telescope prototype designed to orient toward user-selected stars.</p><p>Worked with three linear actuators for coarse leveling and three servos intended for fine adjustment of the telescope platform. The project brought together mechanical positioning, microcontrollers, and physical system integration.</p><div class="facts"><span>Mechatronics</span><span>Linear actuators</span><span>Servos</span><span>Leveling</span></div></div><div class="no-media" style="border-left-color:var(--plum)"><strong>The leveling mechanism</strong>Photos of the telescope, actuator assembly, and control electronics will be added here. The telescope video is intentionally excluded.</div></div></section>
+<section class="wrap project" id="truck"><div class="project-title"><div class="num">PROJECT / 04</div><div><h3>Autonomous Garbage Truck</h3><p class="subtitle">ASME Student Design Competition</p></div></div><div class="project-body"><div><p>Contributed to a student-designed vehicle intended to navigate a model city while collecting and sorting waste. Our team earned <b>2nd place in the 2025–2026 ASME Student Design Competition.</b></p><p>I worked with sensors and microcontrollers for waste identification and remote control, and participated in team testing and iteration.</p><div class="facts"><span>Sensors</span><span>Microcontrollers</span><span>Testing</span><span>Team design</span></div></div><div class="no-media" style="border-left-color:var(--olive)"><strong>More build photos to come.</strong>This section is deliberately text-only until verified project images are available.</div></div></section>
+</main>
+<section class="about" id="about"><div class="wrap about-inner"><div><div class="kicker">The person behind the soldering iron</div><h2>About Lily</h2></div><div><p>I'm studying computer engineering and computer science at the University of Iowa, with a minor in artificial intelligence. I particularly enjoy hands-on work: electronics assembly, embedded programming, debugging, and integrating hardware with software.</p><p>Outside coursework, I work in IT infrastructure at the University of Iowa and have experience assembling and inspecting commercial printed circuit boards.</p><p><a href="mailto:lilyforseen@gmail.com">Email me</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/lilyforseen/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p></div></div></section>
+<footer class="wrap"><span>© <span id="year">2026</span> Lily Forseen</span><span>Built to show the work, not just the finished result.</span></footer>
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="Project photo viewer"><span class="counter" id="counter"></span><button type="button" class="close" id="close" aria-label="Close photo viewer">×</button><button type="button" class="prev" id="prev" aria-label="Previous photo">‹</button><img id="full" alt=""><div class="caption" id="caption"></div><button type="button" class="next" id="next" aria-label="Next photo">›</button></div>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const viewer=document.getElementById('viewer'),full=document.getElementById('full'),caption=document.getElementById('caption'),counter=document.getElementById('counter');
+let photos=[],at=0,previousFocus=null,startX=null;
+function display(){const b=photos[at],img=b.querySelector('img');full.src=img.src;full.alt=img.alt;caption.textContent=b.querySelector('em')?.textContent||img.alt;counter.textContent=(at+1)+' / '+photos.length;}
+function openPhoto(button){photos=[...button.closest('[data-gallery]').querySelectorAll('.photo')];at=photos.indexOf(button);previousFocus=document.activeElement;display();viewer.classList.add('open');document.body.style.overflow='hidden';document.getElementById('close').focus();}
+function move(n){at=(at+n+photos.length)%photos.length;display();}
+function closePhoto(){viewer.classList.remove('open');document.body.style.overflow='';full.removeAttribute('src');previousFocus?.focus();}
+document.querySelectorAll('.photo').forEach(b=>b.addEventListener('click',()=>openPhoto(b)));
+document.getElementById('close').addEventListener('click',closePhoto);document.getElementById('prev').addEventListener('click',()=>move(-1));document.getElementById('next').addEventListener('click',()=>move(1));
+viewer.addEventListener('click',e=>{if(e.target===viewer)closePhoto()});
+document.addEventListener('keydown',e=>{if(!viewer.classList.contains('open'))return;if(e.key==='Escape')closePhoto();if(e.key==='ArrowRight')move(1);if(e.key==='ArrowLeft')move(-1);});
+viewer.addEventListener('touchstart',e=>{startX=e.touches[0]?.clientX},{passive:true});viewer.addEventListener('touchend',e=>{if(startX==null)return;const dx=e.changedTouches[0].clientX-startX;if(Math.abs(dx)>45)move(dx<0?1:-1);startX=null},{passive:true});
+</script></body></html>
