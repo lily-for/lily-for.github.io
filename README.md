@@ -30,7 +30,7 @@ Contact links use the email and LinkedIn profile in your resume. No GitHub profi
 
 The page includes 28 distinct project/event photos and one video. Repeated uploads of the same photo or video are represented once. All thumbnails are visible on the page and can be enlarged without cropping. General event photos are grouped with NeuroSense; review their placement and the short visual captions. NeuroSense was a 48-hour project. Its lead image shows the NeuroSense team. Photo 03 describes the temperature-feedback electronics; the modeled hand remains a gallery photo. The telescope sensor photo is in Star Sniper. FPV photos formerly numbered 06, 07, and 08 and the drone bench video are omitted. No garbage truck media was identified, so that section uses resume details without an unrelated photo.
 
-The NeuroSense video has player controls and does not autoplay. The page uses only the final four seconds of the original clip, showing a too-cold warning, with a matching poster image. The telescope video and NeuroSense photo formerly numbered 08 have been removed. Photos were resized for faster loading; your originals remain separate.
+The NeuroSense video has player controls and does not autoplay. The page uses only the final six seconds of the original clip, showing a too-cold warning, with a matching poster image. The telescope video and NeuroSense photo formerly numbered 08 have been removed. Photos were resized for faster loading; your originals remain separate.
 
 Enlarged photos can be browsed within the same project using Previous/Next buttons, left/right arrow keys, or a horizontal swipe on a phone. The gallery loops from the last photo to the first. Escape or Close returns to the thumbnail.
 
@@ -38,7 +38,7 @@ Enlarged photos can be browsed within the same project using Previous/Next butto
 
 Added Rescue Rover (concept / prototype planning), the ECE:3410 infrared link (bench measurements and range work), MorseKey (C input timing and debounce contribution), and early IMU gait exploration. These additions use project details shared by Lily and distinguish intended capabilities from completed work. Added C, ESP-IDF, Git / GitLab, and KiCad schematic capture to the tools section. KiCad experience is limited to schematics; no PCB-layout experience is claimed.
 
-The original project media files are preserved. NeuroSense now uses the team photo as its lead image, revised captions, and a four-second clip of the too-cold warning. The sidebar scrolls independently on shorter desktop screens to keep all eight project links reachable.
+The original project media files are preserved. NeuroSense now uses the team photo as its lead image, revised captions, and a six-second clip of the too-cold warning. The sidebar scrolls independently on shorter desktop screens to keep all eight project links reachable.
 
 ## Review updates
 
